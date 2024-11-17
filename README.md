@@ -1,4 +1,5 @@
-# Verilog-Code-for-Swapping-Three-Numbers
+## Exp No:3 Swapping-of-three-numbers-using-verilog-HDL
+
 ## Aim
 To design and simulate a Verilog HDL code for swapping the values of three numbers without using any temporary variables, and verify the correctness of the swapping operation through a testbench using the Vivado 2023.1 simulation environment.
 
@@ -28,67 +29,78 @@ Save and Document Results:
 
 Capture the waveform output and include the results in your report for verification.
 
-## Verilog Code:
+## Verilog Code for Swapping Three Numbers :
+
+## Blocking:
 ```
-module normal_code(a,b,c,x,y,z);
-    input[3:0]a; 
-    input[3:0]b;
-    input[3:0]c;
-    output reg [3:0]x; 
-    output reg [3:0]y; 
-    output reg [3:0]z;
-
-    always @(*) begin
-        x <= c;
-        y <= a;
-        z <= b;
-    end
-
+module blocking_3();
+reg [7:0]a,b,c;
+initial
+begin
+a=8'd24;
+b=8'd15;
+c=8'd20;
+#10
+b=a;
+c=b;
+a=c;
+end 
+initial 
+begin
+$monitor("value of a:%d,and b=%d,c=%d",a,b,c);
+end
 endmodule
 ```
-
+## Non Blocking:
+```
+module nonblocking_3();
+reg [7:0]a,b,c;
+initial
+begin
+a=8'd24;
+b=8'd15;
+c=8'd20;
+#10
+b<=a;
+c<=b;
+a<=c;
+end 
+initial 
+begin
+$monitor("value of a:%d,and b=%d,c=%d",a,b,c);
+end
+endmodule
+```
 ## Testbench for Swapping Three Numbers:
+
+## Blocking:
 ```
-module normal_tb;
-    reg [3:0] a, b, c;
-    wire [3:0] x, y, z;
-
-    // Instantiate swap_three module
-    normal_code dut(
-        .a(a), 
-        .b(b), 
-        .c(c), 
-        .x(x), 
-        .y(y), 
-        .z(z)
-    );
-
-    initial begin
-        // Test case 1: Positive numbers
-        a = 4'd6;
-        b = 4'd5;
-        c = 4'd4;
-        #10;
-
-
-        // Test case 3: Mixed numbers
-        a = 4'd3;
-        b = 4'd2;
-        c = 4'd1;
-        #10;
-
-        $finish;
-    end
-    
-       // Monitor outputs
-    initial begin
-        $monitor("Time = %0t, a = %0d, b = %0d, c = %0d, x = %0d, y = %0d, z = %0d",
-                 $time, a, b, c, x, y, z);
-    end
-
+module tb_blocking_3;
+blocking_3 uut();
+initial begin
+$monitor("At time %0dns: value of a = %d, b = %d, c = %d", $time, uut.a, uut.b, uut.c);
+#50;
+$finish;
+end
 endmodule
 ```
-## OUTPUT:![Screenshot 2024-10-09 154715](https://github.com/user-attachments/assets/3c46cc43-53b7-448b-bfa8-479372be1247)
+## Non Blocking:
+```
+module tb_nonblocking_3;
+nonblocking_3 uut();
+initial begin
+$monitor("At time %0dns: value of a = %d, b = %d, c = %d", $time, uut.a, uut.b, uut.c);
+#50
+$finish;
+end
+endmodule
+```
+
+## OUTPUT:
+
+## Blocking:![374919099-f7d08029-54b4-43d0-a61d-05a5bd01ff7e](https://github.com/user-attachments/assets/55dd1fc8-b62f-4d81-b486-8cb247754714)
+
+## Non Blocking:![374919033-b04a02a1-868b-4b3d-bf4e-26e6d43d3c0a](https://github.com/user-attachments/assets/f381e5eb-5158-4dcd-a300-8db8f21e2c84)
 
 
 ## Conclusion
