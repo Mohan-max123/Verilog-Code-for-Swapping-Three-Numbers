@@ -98,9 +98,10 @@ endmodule
 
 ## OUTPUT:
 
-## Blocking:![374919099-f7d08029-54b4-43d0-a61d-05a5bd01ff7e](https://github.com/user-attachments/assets/55dd1fc8-b62f-4d81-b486-8cb247754714)
+## blocking:![swapping trees output 1](https://github.com/user-attachments/assets/41e74db1-111b-41fc-90b2-5dd2904b1ce1)
 
-## Non Blocking:![374919033-b04a02a1-868b-4b3d-bf4e-26e6d43d3c0a](https://github.com/user-attachments/assets/f381e5eb-5158-4dcd-a300-8db8f21e2c84)
+
+## Non Blocking:![swapping out 2](https://github.com/user-attachments/assets/df6be1fe-10d0-47bf-aac8-6f63c1ffecf4)
 
 
 ## Conclusion
