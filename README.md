@@ -98,8 +98,10 @@ endmodule
 
 ## OUTPUT:
 
-## blocking:![swapping trees output 1](https://github.com/user-attachments/assets/41e74db1-111b-41fc-90b2-5dd2904b1ce1)
-## Non Blocking:![swapping out 2](https://github.com/user-attachments/assets/df6be1fe-10d0-47bf-aac8-6f63c1ffecf4)
+## blocking:
+![swapping trees output 1](https://github.com/user-attachments/assets/41e74db1-111b-41fc-90b2-5dd2904b1ce1)
+## Non Blocking:
+![swapping out 2](https://github.com/user-attachments/assets/df6be1fe-10d0-47bf-aac8-6f63c1ffecf4)
 
 
 ## Conclusion
